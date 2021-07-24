@@ -3,9 +3,7 @@ from .img2text import convertimg
 import os
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from django.views.decorators.csrf import csrf_exempt
-from PIL import Image
-import shutil
+from django.views.decorators.csrf import csrf_exempt 
 
 
 def homepage(request):

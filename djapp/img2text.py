@@ -1,6 +1,5 @@
 import os 
 from ocrproj.settings import BASE_DIR
-from PIL import Image
 import pytesseract
 from django.core.files.storage import default_storage
 
