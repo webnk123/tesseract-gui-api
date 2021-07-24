@@ -1,0 +1,42 @@
+{% extends 'djapp/header.html' %}
+{% load static %}
+{% block content %}
+
+ <br>
+ <br>
+ <div class="container">
+     <h1>This is a microproject that allows you to interact with <a href="https://github.com/tesseract-ocr/tesseract">Tesseract-ORC</a> via Django or via Django-rest-framework Api to get text out of images</h1>
+     <br>
+     <p></p>
+ </div>
+<div class="container">
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group" align="center">
+    {% csrf_token %}
+    <br>
+    <div class="input-group">
+  <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept="image/png, image/jpeg" name="sentFile" required/>
+</div>
+    <br>
+    <br>
+    <div class="input-group mb-3">
+  <label class="input-group-text">Language</label>
+  <select class="form-select" name="lang" required>
+    <option value="eng">English</option>
+    <option value="rus">Russian</option>
+  </select>
+</div>
+
+    <br>
+    <button type="submit" class="btn btn-primary">EXTRACT TEXT</button>
+    </div>
+</form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div align="center">
+<p><big>{{name}}</big></p>
+</div>
+{% endblock %}

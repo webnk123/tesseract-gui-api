@@ -1,0 +1,32 @@
+{% extends 'djapp/header.html' %}
+{% load static %}
+{% block content %}
+
+<script>hljs.highlightAll();</script>
+<br>
+<br>
+<div class="container">
+<pre><code class="language-python" style="font-size:16px;">      
+import requests
+import os
+
+
+#Sending an api request is pretty easy!
+#First make sure that Django project is running 
+#All you need is 2 variables: path of a file that you want to process and language (eng or rus)
+
+path_img = r"C:\Users\Desktop\sampleimage5.png"
+lang = 'eng'
+
+with open(path_img, 'rb') as img:
+      name_img= os.path.basename(path_img)
+      files = {'image': (name_img,img,'multipart/form-data',{'Expires': '0'})}
+
+      with requests.Session() as s:
+            r = s.post("http://127.0.0.1:8000/api",files=files,data={'lang': lang})
+            print(r.text)
+
+
+</code></pre>
+</div>
+{% endblock %}
